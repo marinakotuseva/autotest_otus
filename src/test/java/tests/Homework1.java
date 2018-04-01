@@ -19,9 +19,11 @@ public class Homework1 {
 
         WebElement findbutton = driver.findElement(By.cssSelector("input[type='submit']"));
 
-        assertTrue(findbutton.isDisplayed());
-
         findbutton.click();
+
+        WebElement findnewopen = driver.findElement(By.className("table"));
+
+        assertTrue(findnewopen.isDisplayed());
 
         driver.quit();
 

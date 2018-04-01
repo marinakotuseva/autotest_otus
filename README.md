@@ -26,4 +26,10 @@ findbutton.click();
 driver.quit();
 ```
 
+Добавил поиск класса таблица на открывшейся странице для проверки.
+```
+WebElement findnewopen = driver.findElement(By.className("table"));
+assertTrue(findnewopen.isDisplayed());
+```
+
 P.S. так какэ то было мое первое знакомство с Java было тяжко, если бы не лекция я бы точно не справился.
