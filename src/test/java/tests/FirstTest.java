@@ -35,10 +35,10 @@ public class FirstTest {
 
         buttonSubmit.click();
 
-//        WebElement errormessage = driver.findElement(By.cssSelector("passport-Domik-Form-Error passport-Domik-Form-Error_active"));
+        WebElement errormessage = driver.findElement(By.cssSelector("passport-Domik-Form-Error passport-Domik-Form-Error_active"));
 
-//        assertTrue(!errormessage.isDisplayed());
+        assertTrue(!errormessage.isDisplayed());
 
-//        driver.quit();
+        driver.quit();
     }
 }
