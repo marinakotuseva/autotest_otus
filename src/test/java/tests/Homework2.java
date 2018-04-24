@@ -24,6 +24,14 @@ public class Homework2 {
 
     }
 
+    String fromPort = "San Diego";
+    String toPort = "Berlin";
+    String from_to = "Flights from " + fromPort + " to " + toPort + ":";
+    String sendName = "Misha";
+    String sendaddress = "Mishland";
+    String sendcity = "Mishkva";
+    String sendstate = "Mishstate";
+
     @Test
     public void test() {
 
@@ -32,10 +40,10 @@ public class Homework2 {
 //        Ввод городов
 
         WebElement findselect_1 = driver.findElement(By.xpath("//select[@name='fromPort']"));
-        findselect_1.sendKeys("San Diego");
+        findselect_1.sendKeys(fromPort);
 
         WebElement findselect_2 = driver.findElement(By.xpath("//select[@name='toPort']"));
-        findselect_2.sendKeys("Berlin");
+        findselect_2.sendKeys(toPort);
 
 //        Переход на стриницу выбора авиалиний
 
@@ -46,7 +54,7 @@ public class Homework2 {
 
         WebElement find_from_to = driver.findElement((By.xpath("//h3")));
         String find_from_to_text = find_from_to.getText();
-        assertEquals("Flights from San Diego to Berlin:", find_from_to_text, "Error!!");
+        assertEquals(from_to, find_from_to_text, "Error!!");
 
 //        Запоминаем элементы: номер рейса, авиакомпания, стоимость
 
@@ -58,6 +66,7 @@ public class Homework2 {
 
         WebElement find_price = driver.findElement((By.xpath("//tr[1]/td[6]")));
         String find_price_text = find_price.getText();
+        System.out.print(find_price_text);
 
 //         Кнопка перехода на страницу ввода персональных данных
 
@@ -68,15 +77,21 @@ public class Homework2 {
 
         WebElement find_number_2 = driver.findElement(By.xpath("//p[2]"));
         String find_number_2_text = find_number_2.getText();
-        assertEquals("Flight Number: " + find_number_text, find_number_2_text, "Error!!" );
+        String find_number_2_text_split = find_number_2_text.split(": ")[1];
+//        System.out.print(find_number_2_text_split);
+        assertEquals(find_number_text, find_number_2_text_split, "Error!!" );
 
         WebElement find_airline_2 = driver.findElement(By.xpath("//p[1]"));
         String find_airline_2_text = find_airline_2.getText();
-        assertEquals("Airline: " + find_airline_text, find_airline_2_text, "Error!!" );
+        String find_airline_2_text_split = find_airline_2_text.split(": ")[1];
+//        System.out.print(find_airline_2_text_split);
+        assertEquals(find_airline_text, find_airline_2_text_split, "Error!!" );
 
         WebElement find_price_2 = driver.findElement(By.xpath("//p[3]"));
         String find_price_2_text = find_price_2.getText();
-        assertEquals("Price: " + find_price_text, find_price_2_text, "Error!!" );
+        String find_price_2_text_split = find_price_2_text.split(": ")[1];
+        System.out.print(find_price_2_text_split);
+        assertEquals(find_price_text, "$" + find_price_2_text_split, "Error!!" );
 
 //        Сумма тотальная
 //
@@ -89,17 +104,19 @@ public class Homework2 {
 
 //        Ввод персональных данных
 
+
+
         WebElement find_inputname = driver.findElement(By.cssSelector("input[name='inputName']"));
-        find_inputname.sendKeys("Misha");
+        find_inputname.sendKeys(sendName);
 
         WebElement find_inputaddress = driver.findElement(By.cssSelector("input[name='address']"));
-        find_inputaddress.sendKeys("Mishland");
+        find_inputaddress.sendKeys(sendaddress);
 
         WebElement find_inputcity = driver.findElement(By.cssSelector("input[name='city']"));
-        find_inputcity.sendKeys("Mishkva");
+        find_inputcity.sendKeys(sendcity);
 
         WebElement find_inputstate = driver.findElement(By.cssSelector("input[name='state']"));
-        find_inputstate.sendKeys("Mishstate");
+        find_inputstate.sendKeys(sendstate);
 
         WebElement find_inputzipCode = driver.findElement(By.cssSelector("input[name='zipCode']"));
         find_inputzipCode.sendKeys("1917");
@@ -144,7 +161,7 @@ public class Homework2 {
     @AfterClass
     public void aftertest(){
 
-                driver.quit();
+//                driver.quit();
 
     }
 }
