@@ -94,17 +94,24 @@ public class Homework2 {
         assertEquals(find_price_text, "$" + find_price_2_text_split, "Error!!" );
 
 //        Сумма тотальная
-//
-//        Integer find cost_1 = find_price_2.split("");
-//        WebElement find_cost_2 = driver.findElement(By.xpath("//p[4]"));
-//        Integer find_cost_2_int = find_cost_2.getText();
-//        Integer totalcost = find_cost_1 + find_cost_2_int;
-//
-//        WebElement find_totalcost = driver.findElement((By.xpath("//em")));
+
+//        Приводим значение цены к числовому виду
+       Float find_cost_1_float = Float.parseFloat(find_price_2_text_split);
+//       Ищем таксу и пирводим ее к числовому значению
+       WebElement find_cost_2 = driver.findElement(By.xpath("//p[4]"));
+       String find_cost_2_text = find_cost_2.getText();
+       String find_cost_2_text_split = find_cost_2_text.split(": ")[1];
+       Float find_cost_2_float = Float.parseFloat(find_cost_2_text_split);
+//       Суммируем цену и таксу
+       Float totalcost_summ_float= find_cost_1_float + find_cost_2_float;
+//       Ищем ту томтальную суммму, что выводит на экран
+       WebElement find_totalcost = driver.findElement((By.xpath("//em")));
+       String find_totalcost_text = find_totalcost.getText();
+       Float find_totalcost_float = Float.parseFloat(find_totalcost_text);
+//       Сравниваем татальные суммы
+       assertEquals(totalcost_summ_float, find_totalcost_float, "Error!!");
 
 //        Ввод персональных данных
-
-
 
         WebElement find_inputname = driver.findElement(By.cssSelector("input[name='inputName']"));
         find_inputname.sendKeys(sendName);
