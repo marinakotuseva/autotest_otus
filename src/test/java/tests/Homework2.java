@@ -1,6 +1,5 @@
 package tests;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,7 +10,6 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
-
 
 public class Homework2 {
 
@@ -24,18 +22,18 @@ public class Homework2 {
 
     }
 
-    String fromPort = "Paris";
-    String toPort = "Berlin";
-    String from_to = "Flights from " + fromPort + " to " + toPort + ":";
-    String sendName = "Misha";
-    String sendaddress = "Mishland";
-    String sendcity = "Mishkva";
-    String sendstate = "Mishstate";
-    String sendzipCode = "1919";
-    String sendcreditcardnumber = "111122223333444455556666";
-    String sendcreditcadrmonth = "10";
-    String sendcreditcardyear = "2020";
-    String sendnumbeoncard = "Misha Mishkovich";
+    private String fromPort = "Paris";
+    private String toPort = "Berlin";
+    private String from_to = "Flights from " + fromPort + " to " + toPort + ":";
+    private String sendName = "Misha";
+    private String sendaddress = "Mishland";
+    private String sendcity = "Mishkva";
+    private String sendstate = "Mishstate";
+    private String sendzipCode = "1919";
+    private String sendcreditcardnumber = "111122223333444455556666";
+    private String sendcreditcadrmonth = "10";
+    private String sendcreditcardyear = "2020";
+    private String sendnumbeoncard = "Misha Mishkovich";
 
     @Test
     public void test() {
@@ -182,7 +180,7 @@ public class Homework2 {
     @AfterClass
     public void aftertest(){
 
-               driver.quit();
+        driver.quit();
 
     }
 }
