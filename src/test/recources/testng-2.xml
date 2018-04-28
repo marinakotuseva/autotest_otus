@@ -2,9 +2,9 @@
 
 <suite name="Suite1" verbose="10" >
     <test name="Nopackage" >
-<!--        <packages>
-            <package name="tests.*"/>
-        </packages>-->
+        <!--        <packages>
+                    <package name="tests.*"/>
+                </packages>-->
         <classes>
             <class name="tests.Homework2">
                 <methods>
@@ -13,13 +13,12 @@
                     <include name="aftertest"/>
                 </methods>
             </class>
-
         </classes>
 
     </test>
 
-<!--    <test name="Regression1">
-        <classes>
-        </classes>
-    </test>-->
+    <!--    <test name="Regression1">
+            <classes>
+            </classes>
+        </test>-->
 </suite>

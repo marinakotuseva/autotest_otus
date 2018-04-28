@@ -57,5 +57,19 @@
         </plugins>
     </build>
 
+    <profiles>
+        <profile>
+            <id>two</id>
+            <properties>
+                <suite>testng-2</suite>
+            </properties>
+        </profile>
+        <profile>
+            <id>three</id>
+            <properties>
+                <suite>testng-3</suite>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>
