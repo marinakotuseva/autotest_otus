@@ -9,6 +9,7 @@
             <class name="tests.Homework3">
                 <methods>
                     <include name="getSite"/>
+                    <include name="aftertest"/>
                 </methods>
             </class>
         </classes>
