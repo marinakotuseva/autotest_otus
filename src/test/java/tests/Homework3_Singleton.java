@@ -1,6 +1,5 @@
 package tests;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterClass;
@@ -9,7 +8,7 @@ import utils.WebDriverManager;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class Homework3 {
+public class Homework3_Singleton {
 
     private String URL_what_you_need= "http://blazedemo.com/";
 
