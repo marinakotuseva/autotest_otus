@@ -1,11 +1,11 @@
-package tests;
+package blazedemo;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Homework3_SelectPage {
+public class SelectPage {
 
     private WebDriver driver;
 
@@ -18,7 +18,7 @@ public class Homework3_SelectPage {
     @FindBy(css = "input[type='submit']")
     private WebElement find_button;
 
-    public Homework3_SelectPage(WebDriver driver) {
+    public SelectPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
 //        findselect_1 = new Select(this.findselect_1);

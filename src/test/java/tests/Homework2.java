@@ -136,7 +136,7 @@ public class Homework2 {
 //        find_inputcardType.sendKeys("visa");
 
 
-        WebElement find_inputcreditCardNumber = driver.findElement(By.cssSelector("input[name='creditCardNumber']"));
+        WebElement find_inputcreditCardNumber = driver.findElement(By.cssSelector());
         find_inputcreditCardNumber.sendKeys(sendcreditcardnumber);
 
 
