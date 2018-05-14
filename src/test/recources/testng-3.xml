@@ -12,6 +12,13 @@
                     <include name="aftertest"/>
                 </methods>
             </class>
+            <class name="tests.Homework3">
+                <methods>
+                    <include name="beforetest"/>
+                    <include name="test"/>
+                    <include name="aftertest"/>
+                </methods>
+            </class>
         </classes>
 
     </test>

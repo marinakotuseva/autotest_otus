@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import static org.testng.Assert.assertEquals;
 
+
 public class PrivatPage {
 
     private WebDriver driver;
@@ -21,7 +22,6 @@ public class PrivatPage {
     private WebElement find_cost_2;
     @FindBy(xpath = "//em")
     private WebElement find_totalcost;
-
     @FindBy(css = "input[name='inputName']")
     private WebElement find_inputname;
     @FindBy(css = "input[name='address']")
@@ -48,25 +48,29 @@ public class PrivatPage {
         this.driver = driver;
     }
 
-    public void EqualNumber(){
-        String find_number_text = find_number.getText();
+    public void EqualNumber(WebElement optionValue){
+        String find_number_text = optionValue.getText();
+
         String find_number_2_text = find_number_2.getText();
         String find_number_2_text_split = find_number_2_text.split(": ")[1];
+
         assertEquals(find_number_text, find_number_2_text_split, "Error!!" );
     }
-    public void EqualAirline(){
-        String find_airline_text = find_airline.getText();
+    public void EqualAirline(String optionValue){
+//        String find_airline_text = find_airline.getText();
         String find_airline_2_text = find_airline_2.getText();
         String find_airline_2_text_split = find_airline_2_text.split(": ")[1];
-        assertEquals(find_airline_text, find_airline_2_text_split, "Error!!" );
+        assertEquals(optionValue, find_airline_2_text_split, "Error!!" );
     }
-    public void EqualPrice(){
-        String find_price_text = find_price.getText();
+    public void EqualPrice(String optionValue){
+//        String find_price_text = find_price.getText();
         String find_price_2_text = find_price_2.getText();
         String find_price_2_text_split = find_price_2_text.split(": ")[1];
-        assertEquals(find_price_text, "$" + find_price_2_text_split, "Error!!" );
+        assertEquals(optionValue, "$" + find_price_2_text_split, "Error!!" );
     }
     public void EqualCost(){
+        String find_price_2_text = find_price_2.getText();
+        String find_price_2_text_split = find_price_2_text.split(": ")[1];
         Float find_cost_1_float = Float.parseFloat(find_price_2_text_split);
         String find_cost_2_text = find_cost_2.getText();
         String find_cost_2_text_split = find_cost_2_text.split(": ")[1];

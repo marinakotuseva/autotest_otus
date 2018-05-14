@@ -5,8 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class FinishPage {
 
@@ -39,9 +39,9 @@ public class FinishPage {
         assertEquals("USD", find_amont_text, "Error!!");
     }
 
-    public void Find_cardnumber() {
+    public void Find_cardnumber(String optionValue) {
         String find_cardnumber_text = find_cardnumber.getText();
-        String sendcreditcardnumber_char = sendcreditcardnumber.substring(sendcreditcardnumber.length() - 4, sendcreditcardnumber.length());
+        String sendcreditcardnumber_char = optionValue.substring(optionValue.length() - 4, optionValue.length());
         String find_cardnumber_char = find_cardnumber_text.substring(find_cardnumber_text.length() - 4, find_cardnumber_text.length());
         assertEquals(sendcreditcardnumber_char, find_cardnumber_char, "Error");
     }

@@ -59,6 +59,12 @@
 
     <profiles>
         <profile>
+            <id>one</id>
+            <properties>
+                <suite>testng-1</suite>
+            </properties>
+        </profile>
+        <profile>
             <id>two</id>
             <properties>
                 <suite>testng-2</suite>

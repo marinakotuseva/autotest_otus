@@ -15,10 +15,11 @@ public class FlightsPage {
     private WebElement find_from_to;
     @FindBy(xpath = "//tr[1]/td[2]")
     private WebElement find_number;
+//    public String find_number_new = find_number.getText();
     @FindBy(xpath = "//tr[1]/td[3]")
-    private WebElement find_airline;
+    public WebElement find_airline;
     @FindBy(xpath = "//tr[1]/td[6]")
-    private WebElement find_price;
+    public WebElement find_price;
     @FindBy(css = "input[type='submit']")
     private WebElement find_button_2;
 
