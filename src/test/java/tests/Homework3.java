@@ -35,14 +35,18 @@ public class Homework3 {
         FlightsPage fligtPage = new FlightsPage(driver);
         String from_to = "Flights from San Diego to Berlin:";
         fligtPage.From_to(from_to);
-//        System.out.print(fligtPage.find_number_new);
+//        System.out.println(fligtPage.find_number.getText());
+//        System.out.print(fligtPage.getTEstTExt());
+        String find_number_text = fligtPage.find_number.getText();
+        String find_airline_text = fligtPage.find_airline.getText();
+        String find_price_text = fligtPage.find_price.getText();
         fligtPage.submit();
 
         PrivatPage privatPage = new PrivatPage(driver);
 
-//        privatPage.EqualNumber(fligtPage.find_number);
-//        privatPage.EqualAirline(fligtPage.find_airline);
-//        privatPage.EqualPrice(fligtPage.find_price);
+        privatPage.EqualNumber(find_number_text);
+        privatPage.EqualAirline(find_airline_text);
+        privatPage.EqualPrice(find_price_text);
         privatPage.EqualCost();
         privatPage.inputname("Misha");
         privatPage.inputaddress("Mishstreat");

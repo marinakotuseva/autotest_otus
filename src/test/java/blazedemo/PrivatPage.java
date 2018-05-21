@@ -48,22 +48,17 @@ public class PrivatPage {
         this.driver = driver;
     }
 
-    public void EqualNumber(WebElement optionValue){
-        String find_number_text = optionValue.getText();
-
+    public void EqualNumber(String optionValue){
         String find_number_2_text = find_number_2.getText();
         String find_number_2_text_split = find_number_2_text.split(": ")[1];
-
-        assertEquals(find_number_text, find_number_2_text_split, "Error!!" );
+        assertEquals(optionValue, find_number_2_text_split, "Error!!" );
     }
     public void EqualAirline(String optionValue){
-//        String find_airline_text = find_airline.getText();
         String find_airline_2_text = find_airline_2.getText();
         String find_airline_2_text_split = find_airline_2_text.split(": ")[1];
         assertEquals(optionValue, find_airline_2_text_split, "Error!!" );
     }
     public void EqualPrice(String optionValue){
-//        String find_price_text = find_price.getText();
         String find_price_2_text = find_price_2.getText();
         String find_price_2_text_split = find_price_2_text.split(": ")[1];
         assertEquals(optionValue, "$" + find_price_2_text_split, "Error!!" );
