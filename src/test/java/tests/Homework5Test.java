@@ -2,7 +2,8 @@ package tests;
 
 import automationpractice.HomePage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.opera.OperaOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -11,11 +12,19 @@ import static org.testng.Assert.assertTrue;
 
 public class Homework5Test {
 
+//    ChromeOptions chromeOptions = new ChromeOptions();
+    OperaOptions operaOptions = new OperaOptions();
     WebDriver driver;
 
     @BeforeClass
     public void beforetest() {
-        driver = new ChromeDriver();
+//        chromeOptions.addArguments("--headless");
+//        driver = new ChromeDriver(chromeOptions);
+//        driver = new ChromeDriver();
+
+        operaOptions.setBinary("lib/opera/operadriver");
+        driver = new OperaDriver(operaOptions);
+
     }
 
     @Test

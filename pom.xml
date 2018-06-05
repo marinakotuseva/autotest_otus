@@ -6,7 +6,7 @@
 
     <groupId>FirstTest</groupId>
     <artifactId>firsttest</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <properties>
         <suite>testng</suite>
@@ -50,6 +50,7 @@
                     </suiteXmlFiles>
                     <systemPropertyVariables>
                         <webdriver.chrome.driver>${project.basedir}/lib/chrome/chromedriver</webdriver.chrome.driver>
+                        <!--<webdriver.chrome.driver>${project.basedir}/lib/opera/operadriver</webdriver.chrome.driver>-->
                         <suite>${suite}</suite>
                     </systemPropertyVariables>
                 </configuration>
