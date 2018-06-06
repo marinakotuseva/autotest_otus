@@ -2,37 +2,19 @@ package tests;
 
 import automationpractice.HomePage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.opera.OperaDriver;
-import org.openqa.selenium.opera.OperaOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import utils.WebDriverManager;
-import static org.testng.Assert.assertTrue;
 
 public class Homework5Test {
-
-//    ChromeOptions chromeOptions = new ChromeOptions();
-
-//    OperaOptions operaOptions = new OperaOptions();
 
     WebDriver driver;
 
     @BeforeClass
     public void beforetest() {
 
-        System.setProperty("webdriver.gecko.driver", "lib/firefox/geckodriver");
-        driver = new FirefoxDriver();
-
-//        chromeOptions.addArguments("--headless");
-//        driver = new ChromeDriver(chromeOptions);
-
-//        operaOptions.setBinary("lib/opera/operadriver");
-//        driver = new OperaDriver(operaOptions);
+        driver = WebDriverManager.getDriver("Chrome");
 
     }
 

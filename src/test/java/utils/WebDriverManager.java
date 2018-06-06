@@ -34,6 +34,8 @@ public class WebDriverManager {
                 System.setProperty("webdriver.gecko.driver", "lib/firefox/geckodriver");
                 driver = new FirefoxDriver();
                 break;
+            default:
+                driver = new ChromeDriver();
         }
 
         return driver;
