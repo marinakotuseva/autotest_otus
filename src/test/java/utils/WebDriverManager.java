@@ -6,6 +6,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.opera.OperaOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class WebDriverManager {
 
@@ -28,6 +33,15 @@ public class WebDriverManager {
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--headless");
                 driver = new ChromeDriver(chromeOptions);
+                break;
+            case "Chrome-remote":
+                try {
+                    driver = new RemoteWebDriver(new URL("http://192.168.124.1:4444/wd/hub"),
+                            DesiredCapabilities.chrome());
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                    System.out.print("Ошибка, Силениум хаб не работает локально!");
+                }
                 break;
             case "Firefox":
                 System.setProperty("webdriver.gecko.driver", "lib/firefox/geckodriver");
