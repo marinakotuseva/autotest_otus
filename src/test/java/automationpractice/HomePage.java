@@ -7,6 +7,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.WebDriverManager;
+
+import static org.testng.Assert.assertTrue;
 
 public class HomePage {
 
@@ -19,7 +22,7 @@ public class HomePage {
     public WebElement findTShirts;
 
     @FindBy(css = "span[class=cat-name]")
-    public WebElement checkTShirtsPage;
+    public WebElement findTShirtsPage;
 
     public HomePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -37,6 +40,11 @@ public class HomePage {
 
     public void clickOnTShirts(WebElement optionValue){
         optionValue.click();
+    }
+
+    public void checkTShirtsPage(WebElement optionValue){
+        assertTrue(optionValue.isDisplayed());
+
     }
 
 }

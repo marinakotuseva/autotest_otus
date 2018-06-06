@@ -49,11 +49,19 @@
                         <suiteXmlFile>${project.basedir}/src/test/recources/${suite}.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <systemPropertyVariables>
-                        <!--<webdriver.chrome.driver>${project.basedir}/lib/chrome/chromedriver</webdriver.chrome.driver>-->
-                        <webdriver.chrome.driver>${project.basedir}/lib/firefox/geckodriver</webdriver.chrome.driver>
+                        <webdriver.chrome.driver>${project.basedir}/lib/chrome/chromedriver</webdriver.chrome.driver>
+                        <!--<webdriver.chrome.driver>${project.basedir}/lib/firefox/geckodriver</webdriver.chrome.driver>-->
                         <!--<webdriver.chrome.driver>${project.basedir}/lib/opera/operadriver</webdriver.chrome.driver>-->
                         <suite>${suite}</suite>
                     </systemPropertyVariables>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>7</source>
+                    <target>7</target>
                 </configuration>
             </plugin>
         </plugins>

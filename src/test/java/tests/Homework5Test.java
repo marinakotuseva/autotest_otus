@@ -11,7 +11,7 @@ import org.openqa.selenium.opera.OperaOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
+import utils.WebDriverManager;
 import static org.testng.Assert.assertTrue;
 
 public class Homework5Test {
@@ -25,8 +25,7 @@ public class Homework5Test {
     @BeforeClass
     public void beforetest() {
 
-        System.setProperty("webdriver.gecko.driver", "/home/derokhin/teach/autotest/lib/firefox/geckodriver");
-
+        System.setProperty("webdriver.gecko.driver", "lib/firefox/geckodriver");
         driver = new FirefoxDriver();
 
 //        chromeOptions.addArguments("--headless");
@@ -45,7 +44,7 @@ public class Homework5Test {
         homePage.getMouseMoveToButton();
         homePage.waitMenu(homePage.findTShirts);
         homePage.clickOnTShirts(homePage.findTShirts);
-        assertTrue(homePage.checkTShirtsPage.isDisplayed());
+        homePage.checkTShirtsPage(homePage.findTShirtsPage);
 
     }
 
