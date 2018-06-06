@@ -1,6 +1,43 @@
 autotest
 
 ---
+Homework 5
+---
+
+Задание:
+
+Добавить запуск теста через Internet Explorer/Edge/Safari
+Создать автоматический тест по следующему сценарию:
+1. Открыть сайт http://automationpractice.com/index.php
+2. Навести указатель мыши на Women
+3. Дождаться появление меню c помощью ExpectedConditions
+4. Выбрать в меню T-Shirts 
+5. Проверить, что результаты появились на странице
+
+Задание нужно сделать на любом из четырех браузеров на выбор:
+InternetExplorer,
+Edge,
+Opera,
+Safari
+
+* Дополнительное задание:
+Сделать параметр запуска headless, по которому Google Chrome запускается в headless режиме
+Рекомендации:
+Применить паттерн PageObject, вынести Menu в отдельный компонент
+
+
+Решение:
+
+Создал:
+- синглтон с методом с switch case для вызова нужного браузера (chrome, firefox, opera), опера - глючит
+- HomePage c ожиданем элемента в течении 10 секунд, через ExpectedConditions вида `new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(optionValue));`
+- Выывающией HomePage класс Homework5Test
+
+Для запуска в скрытом режиме добавил для хрома `.addArguments("--headless");`
+
+ 
+
+---
 Homework 4
 ---
 

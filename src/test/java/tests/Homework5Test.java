@@ -14,7 +14,7 @@ public class Homework5Test {
     @BeforeClass
     public void beforetest() {
 
-        driver = WebDriverManager.getDriver("Chrome");
+        driver = WebDriverManager.getDriver("Opera");
 
     }
 

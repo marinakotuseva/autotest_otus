@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.opera.OperaOptions;
 
 public class WebDriverManager {
 
@@ -18,9 +20,6 @@ public class WebDriverManager {
 
     public static WebDriver getDriver(String browserName) {
 
-//        driver = new ChromeDriver();
-//        System.out.print(browserName);
-
         switch (browserName) {
             case "Chrome":
                 driver = new ChromeDriver();
@@ -34,6 +33,10 @@ public class WebDriverManager {
                 System.setProperty("webdriver.gecko.driver", "lib/firefox/geckodriver");
                 driver = new FirefoxDriver();
                 break;
+            case "Opera":
+                OperaOptions operaOptions = new OperaOptions();
+                operaOptions.setBinary("lib/opera/operadriver");
+                driver = new OperaDriver(operaOptions);
             default:
                 driver = new ChromeDriver();
         }
