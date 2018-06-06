@@ -15,7 +15,7 @@ public class HomePage {
     @FindBy(xpath = "(//a[@class='sf-with-ul'])[1]")
     public WebElement findButton;
 
-    @FindBy(xpath = "(//a[@title='T-shirts'])[1]")
+    @FindBy(css = "a[title=\"T-shirts\"]")
     public WebElement findTShirts;
 
     @FindBy(css = "span[class=cat-name]")
