@@ -14,7 +14,7 @@ public class Homework6Test {
     @BeforeClass
     public void beforetest() {
 
-        driver = WebDriverManager.getDriver("Chrome-headless");
+        driver = WebDriverManager.getDriver("Chrome-remote");
 
     }
 
