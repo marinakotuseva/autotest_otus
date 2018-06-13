@@ -33,7 +33,7 @@ public class Homework6Test {
     @AfterClass
     public void aftertest() {
 
-        driver.quit();
+//        driver.quit();
 
     }
 }

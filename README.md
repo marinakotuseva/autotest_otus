@@ -1,6 +1,31 @@
 autotest
 
 ---
+Homework 6
+---
+
+Behavior Driven Development
+
+Задание:
+1. Установить Cucumber как новый проект,
+2. Написать два любых сценария (features) в новом проекте и реализовать их,
+3. Запустить Selenium Grid на локальной машине с 1 node,
+4. Запустить сценарии с использованием mvn test -Dbrowser=remotewebdriver.
+
+Дополнительное задание:
+*Внедрить Cucumber в созданный ранее проект и реализовать feature для определения результатов поиска T-shirts предыдущего домашнего задания.
+
+Решение:
+
+BDD в репозитории - https://github.com/Nefariusmag/testcucumber
+
+Создал:
+- добавил selenium-server в lib
+- запустил hun `java -jar selenium-server-standalone-3.12.0.jar -role hub`
+- запустил ноду `java -jar selenium-server-standalone-3.12.0.jar -role node -hub http://127.0.0.1:4444/grid/register/ -port 5555`
+- настроил в настройках webdriver позсожность подключения через RemoteDriver
+
+---
 Homework 5
 ---
 

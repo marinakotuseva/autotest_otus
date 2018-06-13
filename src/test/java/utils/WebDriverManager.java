@@ -1,5 +1,7 @@
 package utils;
 
+
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -10,7 +12,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URI;
 
 public class WebDriverManager {
 
@@ -36,8 +38,12 @@ public class WebDriverManager {
                 break;
             case "Chrome-remote":
                 try {
-                    driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"),
-                            DesiredCapabilities.chrome());
+                    DesiredCapabilities capabilities = new DesiredCapabilities();
+                    capabilities.setPlatform(Platform.LINUX);
+                    capabilities.setBrowserName("chrome");
+                    capabilities.setVersion("67");
+//                    capabilities.setVersion("67.0.3396.62");
+                    RemoteWebDriver driver = new RemoteWebDriver(URI.create("http://127.0.0.1:4444/wd/hub").toURL(),capabilities);
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                     System.out.print("Ошибка, Силениум хаб не работает локально!");
