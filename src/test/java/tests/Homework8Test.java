@@ -12,6 +12,8 @@ import static artlebedev.HomePage.enterToHomePage;
 
 public class Homework8Test {
 
+    String searchWord = "Квант";
+
     @BeforeTest
     public void beforeTest() {
         Configuration.browser = "chrome";
@@ -19,7 +21,7 @@ public class Homework8Test {
     }
 
     @Test
-    public void artlebedevGenerateIdeaTest(){
+    public void artlebedevGenerateIdeaTest() {
 
         HomePage homePage = enterToHomePage();
         homePage.goToInventoriyPage();
@@ -28,7 +30,10 @@ public class Homework8Test {
         inventoryPage.goToMatrixIdeasPage();
 
         MatrixPage matrixPage = new MatrixPage();
+        matrixPage.inputSearchWord(searchWord);
         matrixPage.generateIdea();
+        matrixPage.searchFindElenet(searchWord);
 
     }
+
 }

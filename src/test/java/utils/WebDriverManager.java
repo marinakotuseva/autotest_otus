@@ -39,11 +39,11 @@ public class WebDriverManager {
             case "Chrome-remote":
                 try {
                     DesiredCapabilities capabilities = new DesiredCapabilities();
-                    capabilities.setPlatform(Platform.LINUX);
+//                    capabilities.setPlatform(Platform.LINUX);
                     capabilities.setBrowserName("chrome");
-                    capabilities.setVersion("67");
+//                    capabilities.setVersion("67");
 //                    capabilities.setVersion("67.0.3396.62");
-                    RemoteWebDriver driver = new RemoteWebDriver(URI.create("http://127.0.0.1:4444/wd/hub").toURL(),capabilities);
+                    driver = new RemoteWebDriver(URI.create("http://172.30.155.57:4444/wd/hub").toURL(),capabilities);
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                     System.out.print("Ошибка, Силениум хаб не работает локально!");

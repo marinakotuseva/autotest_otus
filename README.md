@@ -1,9 +1,45 @@
 autotest
 
 ---
+Homework 8
+---
+Selenide
+
+Необходимо реализовать тест с использованием Selenide  
+Кейс:
+ 1. Открыть страницу artlebedev.ru, 
+2. Перейти на страницу Инвентарь,
+ 3. Выбрать Полезные штуки "Матрица идей", 
+4. Выполнить поиск любого запроса,
+
+ Проверить, что результаты поиска отображаются.  
+
+Решение:
+
+Создал:
+- Сделал PageObject из страниц - HomePage, InventoryPage, MatrixPage
+- Их вызывает тест - Homework8Test
+
+Для открытия страницы браузера использует конструкция:
+```java
+public static HomePage enterToHomePage() {
+    open("https://www.artlebedev.ru/");
+    return page(HomePage.class);
+    }
+```
+
+Для поиска элемента делаем:
+`x("//button[@type=\"submit\"]");`
+Для работы с элементами перечисляем операции через точку:
+```java
+.setValue(String);
+.click(); 
+.should(text(String)); // Содержит текст
+```
+
+---
 Homework 6
 ---
-
 Behavior Driven Development
 
 Задание:
@@ -28,6 +64,7 @@ BDD в репозитории - https://github.com/Nefariusmag/testcucumber
 ---
 Homework 5
 ---
+Разные браузеры
 
 Задание:
 
@@ -65,6 +102,7 @@ Safari
 ---
 Homework 4
 ---
+Работа со свойствами элементов
 
 Задание:
 
@@ -84,6 +122,7 @@ Homework 4
 ---
 Homework 3
 ---
+Page Object
 
 Задание:
 
