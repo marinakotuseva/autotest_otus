@@ -10,7 +10,6 @@ public class MatrixPage {
         return this;
     }
 
-
     public MatrixPage generateIdea(){
         $x("//button[@type=\"submit\"]").click();
         return this;

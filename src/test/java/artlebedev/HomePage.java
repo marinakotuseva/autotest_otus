@@ -10,8 +10,9 @@ public class HomePage {
         open("https://www.artlebedev.ru/");
         return page(HomePage.class);
     }
-    public HomePage goToInventoriyPage(){
+
+    public InventoryPage goToInventoriyPage(){
         $x("//a[@href=\"/tools/\"]").click();
-        return this;
+        return page(InventoryPage.class);
     }
 }

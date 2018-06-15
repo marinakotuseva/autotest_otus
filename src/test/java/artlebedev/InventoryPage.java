@@ -1,12 +1,13 @@
 package artlebedev;
 
 import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.page;
 
 public class InventoryPage {
 
-    public InventoryPage goToMatrixIdeasPage(){
+    public MatrixPage goToMatrixIdeasPage(){
         $x("//a[@class=\"item item-matrix\"]").click();
-        return this;
+        return page(MatrixPage.class);
     }
 
 }

@@ -36,4 +36,16 @@ public class Homework8Test {
 
     }
 
+    @Test
+    public void artlebedevGenerateIdea2Test() {
+
+        enterToHomePage()
+                .goToInventoriyPage()
+                .goToMatrixIdeasPage()
+                .inputSearchWord(searchWord)
+                .generateIdea()
+                .searchFindElenet(searchWord);
+
+    }
+
 }
