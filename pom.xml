@@ -10,6 +10,7 @@
 
     <properties>
         <suite>testng</suite>
+        <!--<suite>general</suite>-->
     </properties>
 
     <dependencies>
@@ -40,6 +41,16 @@
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
             <version>4.11.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.epam.jdi</groupId>
+            <artifactId>jdi-uitest-web</artifactId>
+            <version>LATEST</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>2.2.1</version>
         </dependency>
     </dependencies>
 

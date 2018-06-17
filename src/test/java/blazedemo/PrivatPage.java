@@ -70,7 +70,7 @@ public class PrivatPage {
         String find_cost_2_text = find_cost_2.getText();
         String find_cost_2_text_split = find_cost_2_text.split(": ")[1];
         Float find_cost_2_float = Float.parseFloat(find_cost_2_text_split);
-        Float totalcost_summ_float= find_cost_1_float + find_cost_2_float;
+        Float totalcost_summ_float = find_cost_1_float + find_cost_2_float;
         String find_totalcost_text = find_totalcost.getText();
         Float find_totalcost_float = Float.parseFloat(find_totalcost_text);
         assertEquals(totalcost_summ_float, find_totalcost_float, "Error!!");
