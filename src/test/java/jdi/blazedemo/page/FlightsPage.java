@@ -4,6 +4,7 @@ import com.epam.jdi.uitests.web.selenium.elements.composite.WebPage;
 import com.epam.jdi.uitests.web.selenium.elements.pageobjects.annotations.JPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import ru.yandex.qatools.allure.annotations.Step;
 
 import static com.epam.web.matcher.testng.Assert.assertEquals;
 
@@ -25,12 +26,14 @@ public class FlightsPage extends WebPage {
     public String find_airline_text = find_airline.getText();
     public String find_price_text = find_price.getText();
 
+    @Step
     public FlightsPage From_to(String from_to) {
         String find_from_to_text = find_from_to.getText();
         assertEquals(from_to, find_from_to_text, "Error!!");
         return this;
     }
 
+    @Step
     public void submit(){
         find_button_2.click();
     }

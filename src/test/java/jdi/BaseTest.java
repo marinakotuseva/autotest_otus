@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeSuite;
 
 public class BaseTest extends TestNGBase {
 
-    @BeforeSuite()
+    @BeforeSuite(alwaysRun = true)
     public static void setUp(){
         WebSite.init(JDIExsampleSite.class);
     }
