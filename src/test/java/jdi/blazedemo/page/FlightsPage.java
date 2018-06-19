@@ -22,9 +22,19 @@ public class FlightsPage extends WebPage {
     @FindBy(css = "input[type='submit']")
     public WebElement find_button_2;
 
-    public String find_number_text = find_number.getText();
-    public String find_airline_text = find_airline.getText();
-    public String find_price_text = find_price.getText();
+    public String find_number_text(){
+        return find_number.getText();
+    }
+    public String find_airline_text(){
+        return find_airline.getText();
+    }
+    public String find_price_text(){
+        return find_price.getText();
+    }
+
+//    public String find_number_text = find_number.getText();
+//    public String find_airline_text = find_airline.getText();
+//    public String find_price_text = find_price.getText();
 
     @Step
     public FlightsPage From_to(String from_to) {
@@ -34,7 +44,7 @@ public class FlightsPage extends WebPage {
     }
 
     @Step
-    public void submit(){
+    public void submit() {
         find_button_2.click();
     }
 

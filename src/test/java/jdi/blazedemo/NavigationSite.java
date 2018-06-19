@@ -1,12 +1,13 @@
 package jdi.blazedemo;
 
+import com.epam.jdi.uitests.web.selenium.elements.composite.WebPage;
 import com.epam.jdi.uitests.web.selenium.elements.pageobjects.annotations.JPage;
 import ru.yandex.qatools.allure.annotations.Step;
 
 import static jdi.blazedemo.JDIExsampleSite.*;
 
 @JPage
-public class NavigationSite {
+public class NavigationSite extends WebPage {
 
     private String fromPort = "Paris";
     private String toPort = "Berlin";
@@ -38,9 +39,9 @@ public class NavigationSite {
     }
     @Step
     public void openPrivatePage(){
-        privatePage.EqualNumber(flightsPage.find_number_text);
-        privatePage.EqualAirline(flightsPage.find_airline_text);
-        privatePage.EqualPrice(flightsPage.find_price_text);
+        privatePage.EqualNumber(flightsPage.find_number_text());
+        privatePage.EqualAirline(flightsPage.find_airline_text());
+        privatePage.EqualPrice(flightsPage.find_price_text());
         privatePage.EqualCost();
 
         privatePage.inputname(sendName);
