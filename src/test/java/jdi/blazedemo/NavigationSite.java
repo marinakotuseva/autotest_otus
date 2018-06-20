@@ -32,7 +32,7 @@ public class NavigationSite extends WebPage {
 
     }
     @Step
-    public void openFlightspage(){
+    public void openFlightspage() {
         flightsPage.From_to(from_to);
         flightsPage.submit();
 
