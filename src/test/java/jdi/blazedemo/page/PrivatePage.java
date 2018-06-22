@@ -1,9 +1,11 @@
 package jdi.blazedemo.page;
 
 import com.epam.jdi.uitests.web.selenium.elements.pageobjects.annotations.JPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static com.epam.jdi.uitests.web.settings.WebSettings.getDriver;
 import static com.epam.web.matcher.testng.Assert.assertEquals;
 
 @JPage(url = "/purchase.php")
@@ -19,8 +21,8 @@ public class PrivatePage {
     public WebElement find_cost_2;
     @FindBy(xpath = "//em")
     public WebElement find_totalcost;
-    @FindBy(css = "input[name='inputName']")
-    public WebElement find_inputname;
+//    @FindBy(css = "input[name='inputName']")
+//    public WebElement find_inputname;
     @FindBy(css = "input[name='address']")
     public WebElement find_inputaddress;
     @FindBy(css = "input[name='city']")
@@ -67,8 +69,10 @@ public class PrivatePage {
         Float find_totalcost_float = Float.parseFloat(find_totalcost_text);
         assertEquals(totalcost_summ_float, find_totalcost_float, "Error!!");
     }
-    public void inputname(String sendName) {
-        find_inputname.sendKeys(sendName);
+    By find_inputname = By.cssSelector("input[name='inputName']");
+    public PrivatePage inputname(String sendName) {
+        getDriver().findElement(find_inputname).sendKeys(sendName);
+        return this;
     }
     public void inputaddress(String sendaddress) {
         find_inputaddress.sendKeys(sendaddress);
