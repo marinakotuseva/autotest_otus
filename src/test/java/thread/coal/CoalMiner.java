@@ -1,4 +1,4 @@
-package org.coal;
+package thread.coal;
 
 import static java.lang.Thread.sleep;
 
@@ -6,7 +6,13 @@ public class CoalMiner implements Runnable {
 
     static boolean shodTheJobBeFinished = false;
 
-   public void atWork(){
+    int workerId;
+
+    public CoalMiner(int workerId){
+        this.workerId = workerId;
+    }
+
+   private void atWork(){
        int lestCapacity = CoalMine.getCapacityAndDecreaseByTen();
 
        try {
@@ -20,7 +26,7 @@ public class CoalMiner implements Runnable {
            return;
        }
 
-       System.out.println("How much coal left=" + lestCapacity);
+       System.out.println("How much coal left=" + lestCapacity + " miner's id: " + workerId);
    }
 
     @Override
@@ -29,8 +35,9 @@ public class CoalMiner implements Runnable {
         while (!shodTheJobBeFinished) {
             atWork();
         }
+
         long endTimer = System.currentTimeMillis();
         long finishedTime = endTimer - startTimer;
-        System.out.println("Finished the job time: " + finishedTime + " ms");
+        System.out.println("The miner: " + workerId + ". Finished the job time: " + finishedTime + " ms");
     }
 }
