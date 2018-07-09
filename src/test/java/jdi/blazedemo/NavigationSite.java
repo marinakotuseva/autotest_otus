@@ -34,18 +34,11 @@ public class NavigationSite extends WebPage {
     @Step
     public void openFlightspage() {
         flightsPage.From_to(from_to);
-        flightsPage.find_number_text();
-        flightsPage.find_airline_text();
-        flightsPage.find_price_text();
         flightsPage.submit();
 
     }
     @Step
     public void openPrivatePage(){
-//        privatePage.EqualNumber(flightsPage.find_number_text());
-//        privatePage.EqualAirline(flightsPage.find_airline_text());
-//        privatePage.EqualPrice(flightsPage.find_price_text());
-//        privatePage.EqualCost();
         privatePage.inputname(sendName);
         privatePage.inputaddress(sendaddress);
         privatePage.inputcity(sendcity);
@@ -55,7 +48,6 @@ public class NavigationSite extends WebPage {
         privatePage.inputcreditCardMonth(sendcreditcadrmonth);
         privatePage.inputcreditCardYear(sendcreditcardyear);
         privatePage.inputnameOnCard(sendnumbeoncard);
-
         privatePage.submit();
 
     }

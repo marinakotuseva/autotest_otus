@@ -9,8 +9,8 @@
     <version>1.0.0</version>
 
     <properties>
-        <suite>testng</suite>
-        <!--<suite>general</suite>-->
+        <suite>testng-1</suite>
+        <aspectj.version>1.8.10</aspectj.version>
     </properties>
 
     <dependencies>
@@ -57,6 +57,30 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>LATEST</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>1.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.25</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -66,9 +90,13 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.21.0</version>
                 <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
                     <suiteXmlFiles>
                         <suiteXmlFile>${project.basedir}/src/test/recources/${suite}.xml</suiteXmlFile>
                     </suiteXmlFiles>
+                    <argLine>
+                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
                     <systemPropertyVariables>
                         <webdriver.chrome.driver>${project.basedir}/lib/chrome/chromedriver</webdriver.chrome.driver>
                         <!--<webdriver.chrome.driver>${project.basedir}/lib/firefox/geckodriver</webdriver.chrome.driver>-->
@@ -76,6 +104,13 @@
                         <suite>${suite}</suite>
                     </systemPropertyVariables>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -90,23 +125,34 @@
 
     <profiles>
         <profile>
-            <id>one</id>
+            <id>test1</id>
             <properties>
                 <suite>testng-1</suite>
             </properties>
         </profile>
         <profile>
-            <id>two</id>
+            <id>test2</id>
             <properties>
                 <suite>testng-2</suite>
             </properties>
         </profile>
         <profile>
-            <id>three</id>
+            <id>test3</id>
             <properties>
                 <suite>testng-3</suite>
             </properties>
         </profile>
     </profiles>
+
+    <reporting>
+        <excludeDefaults>true</excludeDefaults>
+        <plugins>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>LATEST</version>
+            </plugin>
+        </plugins>
+    </reporting>
 
 </project>

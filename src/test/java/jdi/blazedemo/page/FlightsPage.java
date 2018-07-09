@@ -3,8 +3,6 @@ package jdi.blazedemo.page;
 import com.epam.jdi.uitests.web.selenium.elements.composite.WebPage;
 import com.epam.jdi.uitests.web.selenium.elements.pageobjects.annotations.JPage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import ru.yandex.qatools.allure.annotations.Step;
 
 import static com.epam.web.matcher.testng.Assert.assertEquals;
@@ -35,7 +33,7 @@ public class FlightsPage extends WebPage {
         return this;
     }
 
-    By byButton =  By.cssSelector("input[type='submit']");
+    By byButton = By.cssSelector("input[type='submit']");
     @Step
     public FlightsPage submit() {
 
