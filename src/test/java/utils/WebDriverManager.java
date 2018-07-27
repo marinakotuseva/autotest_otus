@@ -42,8 +42,8 @@ public class WebDriverManager {
 //                    capabilities.setPlatform(Platform.LINUX);
                     capabilities.setBrowserName("chrome");
 //                    capabilities.setVersion("67");
-//                    capabilities.setVersion("67.0.3396.62");
-                    driver = new RemoteWebDriver(URI.create("http://172.30.155.57:4444/wd/hub").toURL(),capabilities);
+                    capabilities.setCapability("enableVNC", true);
+                    driver = new RemoteWebDriver(URI.create("http://172.29.41.23:4444/wd/hub").toURL(),capabilities);
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                     System.out.print("Ошибка, Силениум хаб не работает локально!");
