@@ -1,5 +1,40 @@
 autotest
 
+
+---
+Homework 14
+---
+DataProvider
+
+Добавить DataProvider к проекту и написать тест на поиск XSS уязвимостей приложения
+
+Решение:
+
+Конструкция для записи переменных в массив:
+```java
+@DataProvider(name = "xsstest")
+public Object[][] xssDataProvider(){
+    return new Object[][] {{"San Diego", "Berlin"}};
+}
+```
+
+Чтобы забрать переменные из масива для запуска с ними теста добавляем в ``@Test` вот такое обозначение:
+```
+@Test(dataProvider = "xssfalsetest")
+public void test2(String xssFrom, String xssTo)
+```
+
+Чтобы не упало при вводе кривых данных обрабатываю исключение:
+```java
+try {
+    fligtPage.From_to(from_to);
+    System.out.println("Ввели неправильное значение и прошло");
+} catch (AssertionError e) {
+    System.out.println("Всё ок, лишнего не ввести");
+}
+```
+
+
 ---
 Homework 8
 ---

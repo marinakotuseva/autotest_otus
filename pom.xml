@@ -10,7 +10,7 @@
 
     <properties>
         <suite>testng-1</suite>
-        <aspectj.version>1.8.10</aspectj.version>
+        <aspectj.version>1.8.13</aspectj.version>
     </properties>
 
     <dependencies>
