@@ -62,7 +62,6 @@
     <orderEntry type="library" name="Maven: com.saucelabs:sauce_java_common:2.1.23" level="project" />
     <orderEntry type="library" name="Maven: com.saucelabs:saucerest:1.0.32" level="project" />
     <orderEntry type="library" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.json:json:20090211" level="project" />
     <orderEntry type="library" name="Maven: com.epam.jdi:jdi-uitest-core:1.1.22" level="project" />
     <orderEntry type="library" name="Maven: com.epam.jdi:jdi-commons:1.1.22" level="project" />
     <orderEntry type="library" name="Maven: ru.yandex.qatools.allure:allure-java-annotations:1.5.4" level="project" />
@@ -107,5 +106,13 @@
     <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy-json:2.4.12" level="project" />
     <orderEntry type="library" name="Maven: io.rest-assured:rest-assured-common:3.1.0" level="project" />
     <orderEntry type="library" name="Maven: io.rest-assured:xml-path:3.1.0" level="project" />
+    <orderEntry type="library" name="Maven: com.mashape.unirest:unirest-java:1.4.9" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpasyncclient:4.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore-nio:4.4.4" level="project" />
+    <orderEntry type="library" name="Maven: org.json:json:20160212" level="project" />
+    <orderEntry type="library" name="Maven: com.jayway.jsonpath:json-path:2.3.0" level="project" />
+    <orderEntry type="library" name="Maven: net.minidev:json-smart:2.3" level="project" />
+    <orderEntry type="library" name="Maven: net.minidev:accessors-smart:1.2" level="project" />
+    <orderEntry type="library" name="Maven: org.ow2.asm:asm:5.0.4" level="project" />
   </component>
 </module>
