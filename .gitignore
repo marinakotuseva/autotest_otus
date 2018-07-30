@@ -1,4 +1,7 @@
 target/
 \.idea/
 \.logs/
+
+allure-report/
+
 allure-results/
