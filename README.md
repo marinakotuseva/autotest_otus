@@ -1,5 +1,37 @@
 autotest
 
+---
+Homework 15
+---
+Rest-Assured
+
+Создать два теста с использованием Rest-Assured фреймворка
+Домашнее задание:
+ Зарегистрироваться на api.yandex.ru, получить API ключ.  
+Прочитать документацию: https://tech.yandex.ru/dictionary/doc/dg/reference/lookup-docpage/  
+Сделать два теста: 
+1. тест на метод getLangs(),
+ 2. тест на метод lookup(), 
+используя Rest-Assured.
+
+Решение:
+Rest-Assured для обращения и проверок использует следующую конструкцию:
+```java
+given().
+when().
+        get(URL).
+then().
+        statusCode(200).
+        body("$", hasItem("ru-en"));
+        body("text", equalTo("Шалом"));
+```
+
+`.body` позволдяет парсить ответ и находить в нем нужное
+
+Для образенния к Яндекс словарю прочел доку:
+
+1. https://tech.yandex.ru/dictionary/doc/dg/reference/getLangs-docpage/
+2. https://tech.yandex.ru/dictionary/doc/dg/reference/lookup-docpage/
 
 ---
 Homework 14
