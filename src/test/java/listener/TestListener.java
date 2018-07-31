@@ -5,12 +5,17 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+
 import java.io.PrintWriter;
 import java.io.StringWriter;
+
+import static com.epam.jdi.uitests.web.settings.WebSettings.getDriver;
+import static listener.TakeScreenShot.takeSrceenShot;
 
 public class TestListener implements ITestListener {
 
     private Logger logger = Logger.getLogger((TestListener.class));
+//    WebDriver driver;
 
     @Override
     public void onTestStart(ITestResult result) {
@@ -24,14 +29,17 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
-        logger.error("Пичаль!!! " + result.getTestClass() + result.getTestName());
+
+        logger.error("Пичаль!!! " + result.getTestClass() + " " + result.getTestName());
 
         StringWriter stringWriter = new StringWriter();
         PrintWriter printWriter = new PrintWriter(stringWriter);
         Throwable cause = result.getThrowable();
         cause.printStackTrace(printWriter);
-
         logger.error(stringWriter.getBuffer().toString());
+
+        takeSrceenShot(getDriver());
+
     }
 
     @Override
@@ -53,4 +61,5 @@ public class TestListener implements ITestListener {
     public void onFinish(ITestContext context) {
 
     }
+
 }
