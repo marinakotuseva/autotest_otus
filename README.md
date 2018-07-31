@@ -1,5 +1,4 @@
-autotest
-
+Homework для `otus.ru` для курса `https://otus.ru/lessons/qa/` по автотестированию
 
 ---
 Homework 14
@@ -33,6 +32,48 @@ try {
     System.out.println("Всё ок, лишнего не ввести");
 }
 ```
+
+---
+Homework 9
+---
+JDI
+
+Реализовать тест на покупку авиабилета с использованием JDI
+
+Решение:
+Создается сложная структура:
+```
+jdi
+├── BaseTest.java
+├── blazedemo
+│   ├── JDIExsampleSite.java
+│   ├── NavigationSite.java
+│   └── page
+│       ├── FinishPage.java
+│       ├── FlightsPage.java
+│       ├── PrivatePage.java
+│       └── SelectPage.java
+└── Homework9Test.java
+```
+
+где:
+- `blazedemo.page` - страницы page 
+- `Homework9Test.java` - класс запускающий тест
+- `BaseTest.java` - ссылка на JDIExsamlpeSite 
+```java
+@BeforeSuite(alwaysRun = true)
+public static void setUp(){
+    WebSite.init(JDIExsampleSite.class);
+}
+```
+- `blazedemo.JDIExsampleSite.java` - указания главное страницы и инициализация страниц page
+```java
+@JSite(value = "http://blazedemo.com/")
+
+@JPage
+public static SelectPage selectPage;
+```
+- `blazedemo.NavigationSite.java` - обращения к методам страниц и передача им переменных
 
 
 ---

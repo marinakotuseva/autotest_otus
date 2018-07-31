@@ -16,6 +16,4 @@ public class Homework9Test extends BaseTest {
 
     }
 
-
-
 }
