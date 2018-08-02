@@ -25,6 +25,7 @@ public class Homework15Test {
 
     @Test
     public void lookupTest(){
+//        Можете не писать given() и when() если у вас простой запрос GET без Headers. Тогда ваши тесты будут начинаться с метода get().
         given().
         when().
                 get(API_URL + "lookup?key=" + API_KEY + "&lang= " + lang_lang + "&text=" + text).
