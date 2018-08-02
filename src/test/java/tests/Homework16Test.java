@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class Homework16Test {
 
     private static String API_URL = "https://translate.yandex.net/api/v1.5/tr.json/translate";
-    private static String API_KEY = "trnsl.1.1.20180722T143359Z.9720535089b55317.dddebaf0083a8a7df6d7636f612b6e72cde21796";
+    private static String API_KEY = "trnsl.1.1.20180802T114243Z.2aa657b233e6dcec.19d24bb2d7270b55be48730fca35c37f9f794e1f";
     private static String lang_lang = "en-ru";
     private static String text = "Shalom";
     private String textUniRest;
@@ -29,10 +29,7 @@ public class Homework16Test {
                 .asString()
                 .getBody();
 
-        System.out.println(jsonUniRest);
-
         textUniRest = JsonPath.read(jsonUniRest, "$.text[0]");
-        System.out.println(textUniRest);
 
     }
 
