@@ -5,3 +5,5 @@ target/
 allure-report/
 
 allure-results/
+
+build/reports/tests/
