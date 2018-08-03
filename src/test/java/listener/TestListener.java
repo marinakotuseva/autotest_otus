@@ -4,18 +4,17 @@ import org.apache.log4j.Logger;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import utils.WebDriverManager;
 
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-import static com.epam.jdi.uitests.web.settings.WebSettings.getDriver;
 import static listener.TakeScreenShot.takeSrceenShot;
 
 public class TestListener implements ITestListener {
 
     private Logger logger = Logger.getLogger((TestListener.class));
-//    WebDriver driver;
 
     @Override
     public void onTestStart(ITestResult result) {
@@ -24,11 +23,13 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        logger.info("Гагарин в космос летал... и вернулся");
+        logger.info("Отлично, все готово");
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
+
+        takeSrceenShot(WebDriverManager.getInstance());
 
         logger.error("Пичаль!!! " + result.getTestClass() + " " + result.getTestName());
 
@@ -38,7 +39,6 @@ public class TestListener implements ITestListener {
         cause.printStackTrace(printWriter);
         logger.error(stringWriter.getBuffer().toString());
 
-        takeSrceenShot(getDriver());
 
     }
 

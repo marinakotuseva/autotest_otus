@@ -22,6 +22,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import utils.WebDriverManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -41,31 +42,16 @@ public class Homework11Test {
     @BeforeClass
     public void beforetest(){
 
-//        addListener(new EventListener());
+        driver = WebDriverManager.getDriver("Chrome-traffic");
 
-        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-
-//        DesiredCapabilities caps = DesiredCapabilities.chrome();
-//        LoggingPreferences logs = new LoggingPreferences();
-//        logs.enable(LogType.PERFORMANCE, Level.INFO);
-//        caps.setCapability(CapabilityType.LOGGING_PREFS, logs);
-
-//        ChromeOptions chromeOptions = new ChromeOptions();
-////        chromeOptions.addArguments("--headless");
-//        chromeOptions.addArguments()
-//        driver = new ChromeDriver(chromeOptions);
-
-
-//        WebDriver driver = new ChromeDriver(caps);
-//
-//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(url);
-////
-//        LogEntries logEntries = driver.manage().logs().get(LogType.PERFORMANCE);
-//        for(LogEntry entry : logEntries) {
-//            System.out.println(entry.getLevel() + " " + entry.getMessage());
-//        }
+
+        LogEntries logEntries = driver.manage().logs().get(LogType.PERFORMANCE);
+        for(LogEntry entry : logEntries) {
+            System.out.println(entry.getLevel() + " " + entry.getMessage());
+        }
     }
 
     @Test
@@ -107,7 +93,7 @@ public class Homework11Test {
         finishPage.Find_id();
         finishPage.Find_status();
         finishPage.Find_amont();
-        finishPage.Find_cardnumber("111122223333444455556666_");
+        finishPage.Find_cardnumber("111122223333444455556666");
 
     }
 

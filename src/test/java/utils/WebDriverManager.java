@@ -6,13 +6,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.logging.LogType;
+import org.openqa.selenium.logging.LoggingPreferences;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.opera.OperaOptions;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URI;
+import java.util.logging.Level;
 
 public class WebDriverManager {
 
@@ -28,6 +32,13 @@ public class WebDriverManager {
     public static WebDriver getDriver(String browserName) {
 
         switch (browserName) {
+            case "Chrome-traffic":
+                DesiredCapabilities caps = DesiredCapabilities.chrome();
+                LoggingPreferences logs = new LoggingPreferences();
+                logs.enable(LogType.PERFORMANCE, Level.INFO);
+                caps.setCapability(CapabilityType.LOGGING_PREFS, logs);
+                driver = new ChromeDriver(caps);
+                break;
             case "Chrome":
                 driver = new ChromeDriver();
                 break;
