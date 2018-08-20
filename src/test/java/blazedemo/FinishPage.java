@@ -46,4 +46,5 @@ public class FinishPage {
         assertEquals(sendcreditcardnumber_char, find_cardnumber_char, "Error");
     }
 
+
 }

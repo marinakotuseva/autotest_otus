@@ -61,6 +61,10 @@ try {
 }
 ```
 
+---
+Homework 11
+---
+Log4J
 ##Homework 9
 JDI
 
@@ -101,6 +105,83 @@ public static SelectPage selectPage;
 - `blazedemo.NavigationSite.java` - обращения к методам страниц и передача им переменных
 
 ##Homework 8
+Задание:
+Добавить логирование, запись видео, траффика, снятие скриншотов в свой проект
+
+Решение:
+
+#####Log4J
+
+- Настраиваем зависимости Log4j:
+```java
+<dependency>
+    <groupId>log4j</groupId>
+    <artifactId>log4j</artifactId>
+    <version>1.2.17</version>
+</dependency>
+```
+- Создаем Listener через создание класса и наследуем из `ITestListener`: 
+```java
+public class TestListener implements ITestListener
+```
+- Вызываем log4j
+```java
+private Logger logger = Logger.getLogger((TestListener.class));
+logger.info("Поехали!");
+logger.error("Пичаль!!! " + result.getTestClass() + " " + result.getTestName());
+```
+- Создаем src/recources/log4j.properties
+- Иногда требуется обозначение конфигурации:
+```java
+BasicConfigurator.configure();
+```
+- Чтобы выдавал развернутое сообщение об ошибке:
+```java
+StringWriter stringWriter = new StringWriter();
+PrintWriter printWriter = new PrintWriter(stringWriter);
+Throwable cause = result.getThrowable();
+cause.printStackTrace(printWriter);
+logger.error(stringWriter.getBuffer().toString());
+```
+
+#####Скриншоты
+
+- Создаем метод:
+```java
+File scrFile = ((TakesScreenshot) driver).getScreenshotAs((OutputType.FILE));
+try {
+    FileUtils.copyFile(scrFile, new File("target/screenshot/screenshot.png"));
+} catch (IOException e) {
+}
+```
+- Вызываем метод через:
+```java
+takeSrceenShot(WebDriverManager.getInstance());
+```
+
+#####Запись трафика
+
+- При вызове драйвера передаем ему ряд настроек:
+```java
+DesiredCapabilities caps = DesiredCapabilities.chrome();
+LoggingPreferences logs = new LoggingPreferences();
+logs.enable(LogType.PERFORMANCE, Level.INFO);
+caps.setCapability(CapabilityType.LOGGING_PREFS, logs);
+driver = new ChromeDriver(caps);
+```
+- Оформляем цикл для запись информации в консоль 
+```java
+LogEntries logEntries = driver.manage().logs().get(LogType.PERFORMANCE);
+for(LogEntry entry : logEntries) {
+    System.out.println(entry.getLevel() + " " + entry.getMessage());
+}
+```
+
+Главноей сложностью тут было, чтобы всегда использовался один и тот же вызываемый webdriver ,а не пытался каждый раз запускаться какой-то новый, тут отлично сработал синглтон.
+
+---
+Homework 8
+---
 Selenide
 
 Задание:

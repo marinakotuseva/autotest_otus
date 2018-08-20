@@ -89,6 +89,17 @@
             <!--<groupId></groupId>-->
             <!--<artifactId>hum</artifactId>-->
         <!--</dependency>-->
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>4.12.2</version>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.automation-remarks</groupId>-->
+            <!--<artifactId>video-recorder-junit</artifactId>-->
+            <!--<version>1.8</version>-->
+        <!--</dependency>-->
+
     </dependencies>
 
     <build>
