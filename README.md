@@ -1,12 +1,27 @@
 Homework для `otus.ru` для курса `https://otus.ru/lessons/qa/` по автотестированию
 
 ---
+Homework 16
+---
+REST + UI 
+
+Домашнее задание:
+Создать тест, отправляющий запрос на REST и проверяющий соответствие данных в UI
+Воспользоваться API Переводчика
+https://tech.yandex.ru/translate/doc/dg/reference/translate-docpage/
+и проверить соответствие результата перевода на web странице ответу от REST API https://translate.yandex.ru, создав 1 автоматический тест.
+
+Решение:
+
+
+---
+Homework 15
 ##Homework 15
 ---
 Rest-Assured
 
-Создать два теста с использованием Rest-Assured фреймворка
 Домашнее задание:
+Создать два теста с использованием Rest-Assured фреймворка
  Зарегистрироваться на api.yandex.ru, получить API ключ.  
 Прочитать документацию: https://tech.yandex.ru/dictionary/doc/dg/reference/lookup-docpage/  
 Сделать два теста: 
