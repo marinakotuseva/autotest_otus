@@ -1,5 +1,6 @@
 package jdi.blazedemo.page;
 
+import com.epam.jdi.uitests.web.selenium.elements.composite.WebPage;
 import com.epam.jdi.uitests.web.selenium.elements.pageobjects.annotations.JPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,7 +9,7 @@ import static com.epam.web.matcher.testng.Assert.assertTrue;
 import static org.testng.AssertJUnit.assertEquals;
 
 @JPage(url = "/confirmation.php")
-public class FinishPage {
+public class FinishPage extends WebPage {
 
     @FindBy(xpath = "//tr[1]/td[2]")
     public WebElement find_id;
@@ -27,13 +28,13 @@ public class FinishPage {
     }
     public void Find_amont() {
         String find_amont_text = find_amont.getText();
-        assertEquals("USD", find_amont_text, "Error!!");
+        assertEquals("Error!", "USD", find_amont_text);
     }
     public void Find_cardnumber(String sendcreditcardnumber) {
         String find_cardnumber_text = find_cardnumber.getText();
         String sendcreditcardnumber_char = sendcreditcardnumber.substring(sendcreditcardnumber.length() - 4, sendcreditcardnumber.length());
         String find_cardnumber_char = find_cardnumber_text.substring(find_cardnumber_text.length() - 4, find_cardnumber_text.length());
-        assertEquals(sendcreditcardnumber_char, find_cardnumber_char, "Error");
+        assertEquals("Error", sendcreditcardnumber_char, find_cardnumber_char);
     }
 
 }

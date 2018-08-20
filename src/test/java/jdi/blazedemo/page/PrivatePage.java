@@ -1,5 +1,6 @@
 package jdi.blazedemo.page;
 
+import com.epam.jdi.uitests.web.selenium.elements.composite.WebPage;
 import com.epam.jdi.uitests.web.selenium.elements.pageobjects.annotations.JPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -10,7 +11,7 @@ import static com.epam.jdi.uitests.web.settings.WebSettings.getDriver;
 import static com.epam.web.matcher.testng.Assert.assertEquals;
 
 @JPage(url = "/purchase.php")
-public class PrivatePage {
+public class PrivatePage extends WebPage {
 
     @FindBy(xpath = "//p[2]")
     public WebElement find_number_2;
@@ -51,6 +52,9 @@ public class PrivatePage {
         getDriver().findElement(byName).sendKeys(sendName);
         return this;
     }
+
+
+
     public void inputaddress(String sendaddress) {
         find_inputaddress.sendKeys(sendaddress);
     }
