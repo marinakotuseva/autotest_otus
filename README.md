@@ -16,7 +16,6 @@ https://tech.yandex.ru/translate/doc/dg/reference/translate-docpage/
 
 ---
 Homework 15
-##Homework 15
 ---
 Rest-Assured
 
